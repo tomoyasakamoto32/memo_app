@@ -6,7 +6,7 @@ class Api::MemosController < ApplicationController
   def create
     @memo = Memo.new(memo_params)
     if @memo.save
-      render show, status: :created
+      render :show, status: :created
     else
       render json: @memo.errors, status: :unprocessable_entity
     end
